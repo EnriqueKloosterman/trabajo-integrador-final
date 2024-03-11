@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS mercado_de_pulgas;
 USE mercado_de_pulgas;
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
    `id` VARCHAR(50) PRIMARY KEY NOT NULL,
    `user_name` VARCHAR(80) NOT NULL,
    `user_email` VARCHAR(100) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE `users` (
    `updatedAt` DATETIME
 );
 
-CREATE TABLE `product` (
+CREATE TABLE IF NOT EXISTS `product` (
    `id` VARCHAR(50) PRIMARY KEY NOT NULL,
    `product_name` VARCHAR(80) NOT NULL,
    `price` DECIMAL NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE `product` (
    `updatedAt` DATETIME
 );
 
-CREATE TABLE `description` (
+CREATE TABLE IF NOT EXISTS `description` (
    `id` INT NOT NULL,
    `description` TEXT NOT NULL,
    `id_pproduct` VARCHAR(100) NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE `description` (
    PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `category` (
+CREATE TABLE IF NOT EXISTS `category` (
    `id` INT NOT NULL AUTO_INCREMENT ,
    `category` VARCHAR(50) NOT NULL,
    `id_product` VARCHAR(255) NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE `category` (
    PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `product_image` (
+CREATE TABLE IF NOT EXISTS `product_image` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `image` VARCHAR(80) NOT NULL,
    `id_product` VARCHAR(50) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE `product_image` (
    PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `coments` (
+CREATE TABLE IF NOT EXISTS `coments` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `coment` TEXT NOT NULL,
    `id_product` VARCHAR(50) NOT NULL,
@@ -64,14 +64,14 @@ CREATE TABLE `coments` (
    PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `discount` (
+CREATE TABLE IF NOT EXISTS `discount` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `discount_on` BOOLEAN NOT NULL,
    `discount` TINYINT,
    PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `stock` (
+CREATE TABLE IF NOT EXISTS `stock` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `in_stock` BOOLEAN NOT NULL,
    `stock` TINYINT NOT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE `stock` (
    PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `detail` (
+CREATE TABLE  IF NOT EXISTS `detail` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `detail` VARCHAR(150) NOT NULL,
    `id_product` VARCHAR(100) NOT NULL,
