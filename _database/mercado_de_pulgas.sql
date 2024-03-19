@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS mercado_de_pulgas;
 USE mercado_de_pulgas;
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE IF NOT EXISTS `user` (
    `id` VARCHAR(50) PRIMARY KEY NOT NULL,
    `user_name` VARCHAR(80) NOT NULL,
    `user_email` VARCHAR(100) NOT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE  IF NOT EXISTS `detail` (
 );
 
 
-ALTER TABLE `product` ADD CONSTRAINT `FK_2422bac2-a2b5-4be1-82d4-f1e807c2dfda` FOREIGN KEY (`id_user`) REFERENCES `users`(`id`)  ;
+ALTER TABLE `product` ADD CONSTRAINT `FK_2422bac2-a2b5-4be1-82d4-f1e807c2dfda` FOREIGN KEY (`id_user`) REFERENCES `user`(`id`)  ;
 
 ALTER TABLE `product` ADD CONSTRAINT `FK_90f9fd01-ef4f-40d5-bc1e-56298a5633a3` FOREIGN KEY (`id_discount`) REFERENCES `discount`(`id`)  ;
 
@@ -104,6 +104,6 @@ ALTER TABLE `product_image` ADD CONSTRAINT `FK_ed7f0ad0-ae35-4e88-b09d-87a60c272
 
 ALTER TABLE `coments` ADD CONSTRAINT `FK_dc4ecdb7-0870-4a38-83cf-f7b28462d6cd` FOREIGN KEY (`id_product`) REFERENCES `product`(`id`)  ;
 
-ALTER TABLE `coments` ADD CONSTRAINT `FK_ca2c1052-20d9-4847-a7e5-0e544986dbb3` FOREIGN KEY (`id_user`) REFERENCES `users`(`id`)  ;
+ALTER TABLE `coments` ADD CONSTRAINT `FK_ca2c1052-20d9-4847-a7e5-0e544986dbb3` FOREIGN KEY (`id_user`) REFERENCES `user`(`id`)  ;
 
 ALTER TABLE `detail` ADD CONSTRAINT `FK_c8b5856f-3fb3-42e4-b9e2-e3688263056a` FOREIGN KEY (`id_product`) REFERENCES `product`(`id`)  ;
