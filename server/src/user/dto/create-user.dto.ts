@@ -1,5 +1,5 @@
 import { Transform } from "class-transformer";
-import { IsEmail, IsEnum, IsInt, IsNumber, IsString, MinLength } from "class-validator";
+import { IsEmail, IsInt, IsString, MinLength } from "class-validator";
 
 export class CreateUserDto {
 
@@ -28,9 +28,5 @@ export class CreateUserDto {
     user_address: string;
 
     @IsInt()
-    // @MinLength(4)
     user_phone: number;
-
-    @IsString()
-    image: string;
 }

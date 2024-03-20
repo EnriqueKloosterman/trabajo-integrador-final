@@ -2,21 +2,21 @@ import { Product } from "src/products/entities/product.entity";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Detail {
+export class Description {
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
-    detail:  string;
-
-    @Column()
-    createdAt: Date;    
-    
-    @Column()
-    updatedAt: Date;
+    description: string;
 
     @ManyToOne(type => Product,
-        product => product.detail,)
+        product => product.description)
     @JoinColumn()
     product: Product[];
+
+    @Column()
+    createdAt: Date;
+
+    @Column()
+    updatedAt: Date;
 }

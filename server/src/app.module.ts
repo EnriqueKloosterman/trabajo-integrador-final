@@ -9,6 +9,9 @@ import { ProductsModule } from './products/products.module';
 import { ComentsModule } from './coments/coments.module';
 import { DiscountModule } from './discount/discount.module';
 import { DetailModule } from './detail/detail.module';
+import { ImageModule } from './image/image.module';
+import { DescriptionModule } from './description/description.module';
+import { CategoryModule } from './category/category.module';
 import * as path from 'path';
 
 @Module({
@@ -38,7 +41,10 @@ import * as path from 'path';
     ProductsModule,
     ComentsModule,
     DiscountModule,
-    DetailModule
+    DetailModule,
+    ImageModule,
+    DescriptionModule,
+    CategoryModule
   ],
   controllers: [],
   providers: [],
